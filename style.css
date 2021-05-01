@@ -15,7 +15,7 @@ body {
   background-color: var(--primary);
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'Times New Roman', Times, serif
   color: var(--secondary);
   line-height: 1.5;
   font-size: 16px;
@@ -24,7 +24,8 @@ body {
 h1 {
   background-color: var(--secondary);
   color: var(--primary);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 45px;
+  line-height: 1;
 }
 
 h2,
@@ -55,17 +56,17 @@ p {
   display: block;
   margin: 5px 0;
   border-radius: var(--border-radius);
-  color: var(--primary);
+  /* color: var(--primary); */
   border: none;
   outline: none;
-  background-color: var(--light-dark);
+  /* background-color: var(--light-dark); */
   box-shadow: 3px 3px var(--dark);
   transform: translate(-1px, -1px);
 }
 
 .btn:hover {
   color: var(--primary);
-  background-color: var(--tertiary);
+  /* background-color: var(--tertiary); */
   transform: translate(0, 0);
   box-shadow: 2px 2px var(--dark);
 }
@@ -79,8 +80,8 @@ p {
   color: var(--primary);
   border: none;
   outline: none;
-  background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--secondary);
+  /* background-color: var(--light-dark); */
+  /* box-shadow: 3px 3px var(--secondary); */
   transform: translate(-1px, -1px);
   display: inline-block;
   width: auto;
@@ -97,17 +98,17 @@ p {
   box-shadow: 2px 2px var(--dark);
 }
 
-.hero {
+/* .hero {
   padding: 3% 4%;
   background-color: var(--dark);
   color: var(--primary);
-}
+} */
 
-.hero p {
+/* .hero p {
   max-width: 75%;
-}
+} */
 
-.app-title {
+/* .app-title {
   font-size: 3rem;
   background-color: var(--primary);
   color: var(--dark);
@@ -115,7 +116,7 @@ p {
   display: inline-block;
   border-radius: var(--border-radius);
   box-shadow: 6px 5px var(--light-dark);
-}
+} */
 
 .list-group {
   padding: 0;
@@ -142,12 +143,13 @@ p {
   border-radius: var(--border-radius);
 }
 
-.icon-danger {
-  color: rgb(255, 70, 70);
+.btn-danger {
+  background-color: rgb(224, 61, 61);
+  color: white;
 }
-
-.icon-success {
-  color: rgb(29, 153, 255);
+ .btn-success {
+  background-color: rgb(20, 148, 105);
+  color: white
 }
 
 /* CARDS */
