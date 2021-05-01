@@ -1,8 +1,8 @@
 var userFormEl = document.querySelector('#user-form');
 //var languageButtonsEl = document.querySelector('#language-buttons');
 var nameInputEl = document.querySelector('#topic');
-var repoContainerEl = document.querySelector('#repos-container');
-var repoSearchTerm = document.querySelector('#repo-search-term');
+var resultsContainerEl = document.querySelector('#results-container');
+var resultSearchTerm = document.querySelector('#search-term');
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
@@ -12,7 +12,7 @@ var formSubmitHandler = function (event) {
   if (username) {
     getUserRepos(username);
 
-    repoContainerEl.textContent = '';
+    resultsContainerEl.textContent = '';
     nameInputEl.value = '';
   } else {
     alert('Please search something!');
@@ -40,6 +40,7 @@ var getUserRepos = function (user) {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
+          console.log(user); 
           displayRepos(data, user);
         });
       } else {
@@ -67,19 +68,21 @@ var getFeaturedRepos = function (language) {
 };
 */
 var displayRepos = function (repos, searchTerm) {
+    console.log(repos)
+    console.log(searchTerm)
   if (repos.length === 0) {
-    repoContainerEl.textContent = 'No repositories found.';
+    resultsContainerEl.textContent = 'No repositories found.';
     return;
   }
 
-  repoSearchTerm.textContent = searchTerm;
+  resultSearchTerm.textContent = searchTerm;
 
   for (var i = 0; i < repos.length; i++) {
     var repoName = repos[i].owner.login + '/' + repos[i].name;
 
     var repoEl = document.createElement('a');
     repoEl.classList = 'list-item flex-row justify-space-between align-center';
-    repoEl.setAttribute('href', `https://www.loc.gov/search/?q=${repoName}&fo=json`);
+    repoEl.setAttribute('href', `./search/?q=${repoName}`);
 
     var titleEl = document.createElement('span');
     titleEl.textContent = repoName;
@@ -99,7 +102,7 @@ var displayRepos = function (repos, searchTerm) {
 
     repoEl.appendChild(statusEl);
 
-    repoContainerEl.appendChild(repoEl);
+    resultsContainerEl.appendChild(repoEl);
   }
 };
 

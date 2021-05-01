@@ -1,6 +1,6 @@
-var repoNameEl = document.querySelector('#repo-name');
-var issueContainerEl = document.querySelector('#issues-container');
-var limitWarningEl = document.querySelector('#limit-warning');
+//var repoNameEl = document.querySelector('#repo-name');
+//var issueContainerEl = document.querySelector('#issues-container');
+//var limitWarningEl = document.querySelector('#limit-warning');
 
 /*
 var getRepoName = function () {
@@ -16,6 +16,8 @@ var getRepoName = function () {
   }
 };
 */
+
+/*
 var getRepoIssues = function (repo) {
   var apiUrl = `https://www.loc.gov/search/?q=${repo}&fo=json`;
 
